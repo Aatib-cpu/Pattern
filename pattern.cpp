@@ -4,13 +4,27 @@
 
 using namespace std;
 
-int main(){
-	srand(time(nullptr));
+void up_right_triangle(int num){
 	
-	//General Formula: int Random_Num = rand()%(max-min+1)+min;
-	int random_num = rand()%10+1;
-	cout<<"random number: "<<random_num<<endl;
+	for(int i=0;i<num;i++){
+		for(int j=0;j<=i;j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}	
+};
+
+void up_right_triangle_inv(int num){
 	
+	for(int i=0;i<num;i++){
+		for(int j=i;j<num;j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}	
+};
+
+void diamond(int random_num){
 	//********* Logic for Pattern *************
 	int up = random_num;
 	
@@ -23,7 +37,7 @@ int main(){
 		}
 	}
 	for(int j=0;j<2*(random_num-up)-1;j++){
-		cout<<"+";
+		cout<<" ";
 		if (j==(2*(random_num-up)-2)){
 			cout<<"*";
 		}
@@ -41,7 +55,7 @@ int main(){
 		}
 	}
 		for(int j=0;j<2*(random_num-up-1)-1;j++){
-		cout<<"+";
+		cout<<" ";
 		if (j==(2*(random_num-up-1)-2)){
 			cout<<"*";
 		}
@@ -49,5 +63,21 @@ int main(){
 		cout<<endl;
 		up++;
 	}
+
+};
+
+int main(){
+	srand(time(nullptr));
+	
+	//General Formula: int Random_Num = rand()%(max-min+1)+min;
+	int random_num = rand()%10+1;
+	cout<<"random number: "<<random_num<<endl;
+
+	up_right_triangle(random_num);
+	cout<<endl;
+	diamond(random_num);
+	cout<<endl;
+	up_right_triangle_inv(random_num);
+	
 	return 0;
 }
