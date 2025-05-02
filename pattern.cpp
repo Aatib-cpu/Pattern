@@ -24,6 +24,38 @@ void up_right_triangle_inv(int num){
 	}	
 };
 
+void hour_glass(int num){
+
+	int i = 0;
+	while(i<num){
+		for(int j=0;j<i;j++){
+			cout<<" ";
+		}
+		for(int k=i;k<num;k++){
+			cout<<"**";
+		}
+		i++;
+		cout<<endl;
+	}
+	/*for(int ii = 0;ii<num;ii++){
+		cout<<" ";
+	}
+	cout<<"*"<<endl;*/
+
+	while(i>0){
+		for(int j=1;j<i;j++){
+			cout<<" ";
+		}
+		for(int k=i;k<=num;k++){
+			cout<<"**";
+		}
+		i--;
+		cout<<endl;
+	}
+
+};
+
+
 void diamond(int random_num){
 	//********* Logic for Pattern *************
 	int up = random_num;
@@ -78,6 +110,7 @@ int main(){
 	diamond(random_num);
 	cout<<endl;
 	up_right_triangle_inv(random_num);
-	
+	cout<<endl;
+ 	hour_glass(random_num);
 	return 0;
 }
